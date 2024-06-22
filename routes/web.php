@@ -37,4 +37,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth:admin
     //Route::resource('users', Admin\UserController::class)->only(['index', 'show']);
     Route::get('users', [Admin\UserController::class, 'index'])->name('users.index');
     Route::get('users/{user}', [Admin\UserController::class, 'show'])->name('users.show');
+
+    Route::resource('restaurants', Admin\RestaurantController::class);
 });
